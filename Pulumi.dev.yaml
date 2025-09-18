@@ -1,0 +1,8 @@
+config:
+  CR-Workshop-Python:vpcCidr: 10.128.0.0/16
+  CR-Workshop-Python:namespace: Elisabeth-Dev
+  CR-Workshop-Python:environment: elisabeth-aws
+  aws:region: us-east-1
+  CR-Workshop-Python:openVpnStack: elisabeth-demo/CR-Workshop-Prep/main
+environment:
+  - Elisabeth-Dev/elisabeth-aws
