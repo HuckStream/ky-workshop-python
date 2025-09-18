@@ -1,4 +1,5 @@
 # cr-workshop-python
+
 Workshop example deploying an VPC, S3 Bucket, RDS Aurora PostgreSQL, and EC2 instances to AWS using Python
 
 ## Step 0 - Setup
@@ -11,31 +12,12 @@ Accept invite to Pulumi Cloud organization and login to dashboard
 
 Log into AWS SSO via the start URL and verify access to account
 
-### Python Environment
-
-Create a virtual environment:
-```bash
-python -m venv venv
-```
-
-Activate the virtual environment:
-```bash
-# On macOS/Linux
-source venv/bin/activate
-
-# On Windows
-venv\Scripts\activate
-```
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
 ### Stack Configuration
+
 - Find your username and CIDR, i.e. `bcenter` and `10.x.0.0/16`
 
 - Set required configuration:
+
   ```bash
   pulumi config set aws:region us-east-1
   pulumi config set namespace your-namespace
@@ -45,6 +27,7 @@ pip install -r requirements.txt
   ```
 
 - Create stack
+
   ```bash
   pulumi stack init your-username
   ```
@@ -55,9 +38,11 @@ pip install -r requirements.txt
   ```
 
 ## Step 1 - Using Stack References & Outputs
+
 - Uncomment code related to Step 1 in `__main__.py`
 
 - Run update
+
   ```bash
   pulumi up
   ```
@@ -65,9 +50,11 @@ pip install -r requirements.txt
 - Verify update successful in Pulumi Cloud
 
 ## Step 2 - Deploy VPC
+
 - Uncomment code related to Step 2 in `__main__.py`
 
 - Run update
+
   ```bash
   pulumi up
   ```
@@ -75,9 +62,11 @@ pip install -r requirements.txt
 - Compare resource graph in Pulumi Cloud to AWS Console
 
 ## Step 3 - Deploy Ping Instances
+
 - Uncomment code related to Step 3 in `__main__.py`
 
 - Run update
+
   ```bash
   pulumi up
   ```
@@ -96,6 +85,7 @@ pip install -r requirements.txt
 - Connect to main vpc private ping instance using SSM connect
 
 - Create a test file
+
   ```bash
   echo "your-username" > test.txt
 
@@ -117,9 +107,11 @@ pip install -r requirements.txt
   ```
 
 ## Step 5 - Restrict S3 Bucket to VPC
+
 - Uncomment code related to Step 5 in `__main__.py` (vpce_id parameter)
 
 - Run update
+
   ```bash
   pulumi up
   ```
@@ -127,6 +119,7 @@ pip install -r requirements.txt
 - Connect to main vpc private ping instance using SSM connect
 
 - Create a test file
+
   ```bash
   echo "your-username" > test.txt
 
@@ -148,6 +141,7 @@ pip install -r requirements.txt
   ```
 
 ## Step 6 - Deploy Aurora PostgreSQL Cluster
+
 - Uncomment code related to Step 6 in `__main__.py`
 
 - Run update
@@ -156,14 +150,17 @@ pip install -r requirements.txt
   ```
 
 ## Step 7 - Verify Cluster Access Restriction
+
 - Connect to isolated vpc private instance using SSM connect
 
 - Install Postgres 16 client
+
   ```bash
   sudo dnf install postgresql16
   ```
 
 - Attempt successful connection to database
+
   ```bash
   psql -U huckstremadmin -p 5432 -h huckstream-wksp-your-username-psql.cluster-xxxxx.us-east-1.rds.amazonaws.com
   ```
@@ -171,6 +168,7 @@ pip install -r requirements.txt
 - Connect to main vpc private instance using SSM connect
 
 - Install Postgres 16 client
+
   ```bash
   sudo dnf install postgresql16
   ```
