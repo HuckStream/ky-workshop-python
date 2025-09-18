@@ -2,7 +2,7 @@ name: CR-Workshop-Python
 runtime:
   name: python
   options:
-    virtualenv: venv
+    toolchain: poetry
 description: Workshop example deploying a VPC, DynamoDB, RDS Aurora, and Databricks to AWS (Python version)
 config:
   pulumi:tags:
