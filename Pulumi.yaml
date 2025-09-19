@@ -1,4 +1,4 @@
-name: CR-Workshop-Python
+name: KY-Workshop-Python
 runtime:
   name: python
   options:
@@ -22,7 +22,7 @@ config:
     default: workshop
   openVpnStack:
     description: The name of the Pulumi stack that deploys the OpenVPN resources
-    default: HuckStream/CR-Workshop-Prep/main
+    default: HuckStream/KY-Workshop-Prep/main
   vpcCidr:
     description: The CIDR to use for the VPC
 template:

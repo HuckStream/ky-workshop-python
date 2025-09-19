@@ -1,4 +1,4 @@
-# cr-workshop-python
+# ky-workshop-python
 
 Workshop example deploying an VPC, S3 Bucket, RDS Aurora PostgreSQL, and EC2 instances to AWS using Python
 
